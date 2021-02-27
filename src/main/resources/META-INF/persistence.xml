@@ -1,0 +1,29 @@
+
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+  http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+  version="2.1">
+	<persistence-unit name="financeiro" transaction-type="RESOURCE_LOCAL">
+		<description>ORM-Exemplo</description>
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		
+		<class>br.ueg.posse.si.p4.reflection.fw</class>
+		
+		<class>br.ueg.br.si.p4.reflection.fw.model.Conta</class>
+		
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		<properties>
+			<property name="hibernate.dialect"
+				value="org.hibernate.dialect.MySQL5Dialect" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://127.0.0.1:3306/financeiro?relaxAutoCommit=true" />
+			<property name="javax.persistence.jdbc.user" value="root" />
+			<property name="javax.persistence.jdbc.password" value="123" />
+			<property name="hibernate.connection.autocommit" value="true"/>
+			<property name="hibernate.show_sql" value="true"/>
+			
+		</properties> 
+	</persistence-unit>
+</persistence>
